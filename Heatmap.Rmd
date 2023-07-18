@@ -5,7 +5,7 @@ library(pheatmap)
 
 ```{r}
 #Importar e tratar dados
-data <- read.csv("Virulencia_2603.csv", check.names = FALSE)
+data <- read.csv("arquivo.csv", check.names = FALSE)
 rnames <- data[,1]                            
 mat_data <- data.matrix(data[,2:ncol(data)])
 rownames(mat_data) <- rnames  
@@ -30,13 +30,13 @@ uniao_dataframe <- cbind(classe_dados,mec_dados)
 #Pheatmap
 library(RColorBrewer)
 pheatmap(
-  #Matriz numerica dos valores a serem tracados
+  #Matriz numerica 
   mat = data,
   # Vetor de cores usadas no mapa de calor
   color = colorRampPalette(brewer.pal(n=3,name = "Blues"))(100),
   #Numero de clusters kmeans a serem feitos
   kmeans_k = NA,
-  # Cor das bordas da celula no mapa de calor, 
+  # Cor das bordas da celula no mapa de calor 
   border_color = "black",
   #Largura e altura da celula 
   cellheight = NA,
@@ -55,15 +55,13 @@ pheatmap(
   # Vetor de pontos de interrupcao para a legenda
   legend_breaks = c(-1,6),
   legend_labels = c("Ausente","Presente"),
- #Quadro de dados que especifica as anotacoes mostradas no lado esquerdo (row) ou 
-  # acima (col) do mapa de calor
+ #Quadro de dados que especifica as anotacoes mostradas 
   annotation_row = NA,
   annotation_col = uniao_dataframe,
-  # Lista para especificar as cores das trilhas 
+  # Lista para especificar as cores 
   annotation_colors = NA,
-  # Trilhas de anotacao deve ser desenhada
+  # Anotacao 
   annotation_legend = TRUE,
- #Mostrando se os nomes das trilhas de anotacao de linha ou  coluna devem ser desenhados
   annotation_names_row = TRUE,
   annotation_names_col = TRUE,
   # Determinar se os niveis nao uilizados tambem sao mostrados na legenda
@@ -72,8 +70,8 @@ pheatmap(
   show_rownames = TRUE,
   show_colnames = TRUE,
   # Titulo do grafico
-  main = "ARG-ANNOT Plasmídeo",
-  # Formatação escrita
+  main = "ARG-ANNOT",
+  #Formatação escrita
   fontsize = 16,
   fontsize_row = 16,
   fontsize_col = 16,
@@ -88,7 +86,7 @@ pheatmap(
   labels_row = NULL,
   labels_col = NULL,
   # salvar arquivo
-  filename = "C:/Users/Emanuela/Desktop/heatmap_virulencia_2603.png",
+  filename = "C:/Users/Desktop/heatmap.png",
   # Determinar a largura e altura do 
   width = 11,
   height = 8,
