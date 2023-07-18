@@ -6,9 +6,7 @@
 Este projeto foi realizado como avaliação da disciplicina Introdução a Programação R (UFSC).
 
 ## Documentação da atividade
-
-## PDF Atividade
-![Atividade](https://github.com/CardosoEmanuela/Heatmap/blob/main/Assets/Desafio.pdf) 
+![PDF Atividade](https://github.com/CardosoEmanuela/Heatmap/blob/main/Assets/Desafio.pdf) 
 
 
 
